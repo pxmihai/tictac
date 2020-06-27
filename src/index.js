@@ -96,7 +96,6 @@ class Board extends React.Component {
                 </div>
                 <div className="board-row">
                     {this.renderRead(16)}
-
                 </div>
 
             </div>
