@@ -35,6 +35,7 @@ class Board extends React.Component {
         super(props);
         this.state={
             squares:Array(9).fill(null),
+            xIsNext:true,
         };
     }
 
@@ -49,6 +50,15 @@ class Board extends React.Component {
             <Square
             value={this.state.squares[i]}
             onClick= { ()=> this.handleClick(i)}
+
+            />
+        );
+    }
+    renderRead(i) {
+        return (
+            <Square
+                value={this.state.squares[i]}
+                onClick= { ()=> this.handleClick(i)}
 
             />
         );
@@ -76,7 +86,7 @@ class Board extends React.Component {
                     {this.renderSquare(8)}
                     {this.renderSquare(9)}
                     {this.renderSquare(10)}
-                    {this.renderSquare(10)}
+                    {this.renderSquare(11)}
                  </div>
                 <div className="board-row">
                     {this.renderSquare(12)}
@@ -84,6 +94,11 @@ class Board extends React.Component {
                     {this.renderSquare(14)}
                     {this.renderSquare(15)}
                 </div>
+                <div className="board-row">
+                    {this.renderRead(16)}
+
+                </div>
+
             </div>
     );
     }
